@@ -8,8 +8,9 @@ const chargePoints = {
         name: 'number_charge_points',
         title: 'number_charge_points',
         id: 'number_charge_points',
-        type: 'number',
-        placeholder: ''
+        type: 'text',
+        placeholder: '',
+        value: '',
     }
 }
 
@@ -21,8 +22,9 @@ const arrivalProbability = {
         name: 'arrival_probability',
         title: 'arrival_probability',
         id: 'arrival_probability',
-        type: 'number',
-        placeholder: ''
+        type: 'text',
+        placeholder: '',
+        value: '',
     },
 }
 
@@ -34,8 +36,9 @@ const consumption = {
         name: 'consumption',
         title: 'consumption',
         id: 'consumption',
-        type: 'number',
-        placeholder: ''
+        type: 'text',
+        placeholder: '',
+        value: '',
     },
 }
 
@@ -47,8 +50,9 @@ const chargingPower = {
         name: 'charging_power',
         title: 'charging_power',
         id: 'charging_power',
-        type: 'number',
-        placeholder: ''
+        type: 'text',
+        placeholder: '',
+        value: '',
     },
 }
 
