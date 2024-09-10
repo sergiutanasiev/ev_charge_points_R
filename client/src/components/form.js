@@ -9,10 +9,31 @@ const Form = () => {
 
   React.useEffect(() => {
     setFormState(ChargingStationForm);
-  }, []);
+    console.log(formValue, 'hform Value');
+  }, [formValue, setFormState]);
 
+  const getFormElById = (id) => {
+    const index = formValue.findIndex((el) => el.id === id);
+    return index !== -1;
+  }
+  
   const handleInputChange = (id, name, value) => {
-    console.log(id, name, value)
+    let updateFormValue;
+    console.log(getFormElById(id))
+    if (getFormElById(id)) {
+      updateFormValue = formValue.map((formEntry) => {
+          if (formEntry.id === id) {
+            return {
+              ...formEntry,
+              value: value
+            }
+          }
+          return formEntry;
+      })
+    } else {
+      updateFormValue = [...formValue, {['id']: id, ['name']: name, ['value']:value}]
+    }
+    setFormValue(updateFormValue);
   }
   
   const getFormElement = ({ tag, id, data }) => {
