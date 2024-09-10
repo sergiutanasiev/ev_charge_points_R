@@ -12,14 +12,15 @@ const Form = () => {
     console.log(formValue, 'hform Value');
   }, [formValue, setFormState]);
 
+  // Check if form value is already present
   const getFormElById = (id) => {
     const index = formValue.findIndex((el) => el.id === id);
     return index !== -1;
   }
   
+  // Update form values
   const handleInputChange = (id, name, value) => {
     let updateFormValue;
-    console.log(getFormElById(id))
     if (getFormElById(id)) {
       updateFormValue = formValue.map((formEntry) => {
           if (formEntry.id === id) {
@@ -36,6 +37,7 @@ const Form = () => {
     setFormValue(updateFormValue);
   }
   
+  // Render specific form tag
   const getFormElement = ({ tag, id, data }) => {
     if (tag === 'input') {
       return <Input key={id} {...data} onChange={(value) => handleInputChange(id, data.name, value)} />;
