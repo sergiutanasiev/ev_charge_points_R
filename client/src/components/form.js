@@ -2,7 +2,7 @@ import React from 'react';
 import ChargingStationForm from '../data/formData';
 import Input from './input';
 
-const Form = ({ form }) => {
+const Form = () => {
   const [loading, setLoading] = React.useState(false);
   const [formState, setFormState] = React.useState([]);
 
@@ -17,9 +17,16 @@ const Form = ({ form }) => {
     return null;
   };
 
+  const handleRunSimulation = () => {
+    console.log('run');
+  }
+
   return (
     <>
       {formState.map((tag) => getFormElement({ ...tag }))}
+      <button onClick={handleRunSimulation}>
+        Run Simulation
+      </button>
     </>
   );
 };

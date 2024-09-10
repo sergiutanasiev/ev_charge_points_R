@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Form from '../components/form';
 
 const Stations = () => {    
@@ -7,7 +7,7 @@ const Stations = () => {
     }, []);
 
   return (
-    <div>
+    <div className="bg-blue-500 text-white p-4">
         <Form />
     </div>
   );
