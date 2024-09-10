@@ -1,0 +1,24 @@
+{
+  "name": "ev_charge_points_r",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "start:frontend": "cd client && npm start",
+    "start:backend": "cd server && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiutanasiev/ev_charge_points_R.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergiutanasiev/ev_charge_points_R/issues"
+  },
+  "homepage": "https://github.com/sergiutanasiev/ev_charge_points_R#readme",
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
