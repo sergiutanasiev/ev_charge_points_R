@@ -12,6 +12,12 @@ app.get('/', (req, res) => {
     return res.send('hello');
 });
 
+app.post('/api/simulate', (req, res) => {
+  res.json({
+      receivedData: req.body
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });

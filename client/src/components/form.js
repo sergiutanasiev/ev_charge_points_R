@@ -1,6 +1,7 @@
 import React from 'react';
 import ChargingStationForm from '../data/formData';
 import Input from './input';
+import { runSimulation } from '../services/api';
 
 const Form = () => {
   const [loading, setLoading] = React.useState(false);
@@ -45,8 +46,9 @@ const Form = () => {
     return null;
   };
 
-  const handleRunSimulation = () => {
-    console.log('run');
+  const handleRunSimulation = (e) => {
+    e.preventDefault();
+    runSimulation(formValue);
   }
 
   return (

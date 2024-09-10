@@ -16,7 +16,13 @@ const runSimulation = async(formData) => {
 
         const data = await response.json();
 
+        console.log(data);
+
     } catch (error) {
         throw new Error(`Request failed: ${error}`)
     }
+}
+
+export {
+    runSimulation
 }
