@@ -24,9 +24,13 @@ const Form = () => {
   return (
     <>
       {formState.map((tag) => getFormElement({ ...tag }))}
-      <button onClick={handleRunSimulation}>
+      <button onClick={handleRunSimulation} className="btn btn-primary">
         Run Simulation
       </button>
+      <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Welcome to DaisyUI with Tailwind CSS</h1>
+      <button className="btn btn-primary">DaisyUI Button</button>
+    </div>
     </>
   );
 };
