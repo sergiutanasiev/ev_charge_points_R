@@ -10,6 +10,7 @@
 6. Server can be accessed at `localhost:3001`
 
 For separate installation of client and server if concurently fails
+
 `cd client`
 `npm install`
 
