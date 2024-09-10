@@ -11,7 +11,7 @@ const runSimulation = async(formData) => {
         });
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('Network response failed');
         }
 
         const data = await response.json();
