@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 app.post('/api/simulate', (req, res) => {
   res.json({
-      receivedData: req.body
+      response: req.body
   });
 });
 

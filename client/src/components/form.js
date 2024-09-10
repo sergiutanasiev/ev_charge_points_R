@@ -1,9 +1,12 @@
 import React from 'react';
 import ChargingStationForm from '../data/formData';
 import Input from './input';
-import { runSimulation } from '../services/api';
+import useRunSimulation from '../services/api';
 
 const Form = () => {
+
+  const { runSimulation } = useRunSimulation();
+
   const [loading, setLoading] = React.useState(false);
   const [formState, setFormState] = React.useState([]);
   const [formValue, setFormValue] = React.useState([]);
@@ -46,9 +49,14 @@ const Form = () => {
     return null;
   };
 
-  const handleRunSimulation = (e) => {
+  const handleRunSimulation = async (e) => {
     e.preventDefault();
-    runSimulation(formValue);
+    try {
+      await runSimulation(formValue);
+    } catch (error) {
+      throw new Error(`Failed simulation run ${error}`)
+    }
+    
   }
 
   return (

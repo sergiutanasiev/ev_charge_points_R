@@ -2,6 +2,7 @@ import React from 'react';
 
 const SimulationContext = React.createContext(null);
 
+// Set context
 const useSimulationContext = () => {
     const context = React.useContext(SimulationContext);
 
@@ -12,6 +13,8 @@ const useSimulationContext = () => {
     return context;
 }
 
+
+// Define provider
 const SimulationProvider = ({children}) => {
 
     const [simulation, setSimulation] = React.useState([]);

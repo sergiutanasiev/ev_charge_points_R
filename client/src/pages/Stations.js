@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from '../components/form';
+import Simulation from '../modules/simulation';
 
 const Stations = () => {    
 
@@ -9,6 +10,7 @@ const Stations = () => {
   return (
     <div>
         <Form />
+        <Simulation />
     </div>
   );
 };
