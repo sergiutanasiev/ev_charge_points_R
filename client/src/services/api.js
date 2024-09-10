@@ -20,9 +20,9 @@ const useRunSimulation = () => {
             }
 
             const data = await res.json();
-
-            if (data.response) {
-                updateSimulationResponse(data.response);
+            if (data) {
+                
+                updateSimulationResponse(data);
             }
         } catch (error) {
             throw new Error(`Request failed: ${error.message}`)

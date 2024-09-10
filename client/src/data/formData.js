@@ -4,13 +4,13 @@ const chargePoints = {
     id: 1,
     tag: 'input',
     data: {
-        text: 'Number of charge points',
+        text: 'Number of charge stations',
         name: 'number_charge_points',
         title: 'number_charge_points',
         id: 'number_charge_points',
-        type: 'text',
+        type: 'number',
         placeholder: '',
-        value: '',
+        value: '20',
     }
 }
 
@@ -18,13 +18,13 @@ const arrivalProbability = {
     id: 2,
     tag: 'input',
     data: {
-        text: 'Arrival probability',
+        text: 'Multiplier arrival probability in %',
         name: 'arrival_probability',
         title: 'arrival_probability',
         id: 'arrival_probability',
-        type: 'text',
+        type: 'number',
         placeholder: '',
-        value: '',
+        value: '100',
     },
 }
 
@@ -32,13 +32,13 @@ const consumption = {
     id: 3,
     tag: 'input',
     data: {
-        text: 'Consumption',
+        text: 'Consumption of the cars',
         name: 'consumption',
         title: 'consumption',
         id: 'consumption',
-        type: 'text',
+        type: 'number',
         placeholder: '',
-        value: '',
+        value: '18',
     },
 }
 
@@ -46,13 +46,13 @@ const chargingPower = {
     id: 4,
     tag: 'input',
     data: {
-        text: 'Charging Power (kW):',
+        text: 'Charging power per chargepoint',
         name: 'charging_power',
         title: 'charging_power',
         id: 'charging_power',
-        type: 'text',
+        type: 'number',
         placeholder: '',
-        value: '',
+        value: '11',
     },
 }
 

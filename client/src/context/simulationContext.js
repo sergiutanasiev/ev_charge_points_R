@@ -17,7 +17,7 @@ const useSimulationContext = () => {
 // Define provider
 const SimulationProvider = ({children}) => {
 
-    const [simulation, setSimulation] = React.useState([]);
+    const [simulation, setSimulation] = React.useState({});
 
     const simulationContextState = {
         simulation,

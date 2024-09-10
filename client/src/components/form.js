@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import ChargingStationForm from '../data/formData';
 import Input from './input';
 import useRunSimulation from '../services/api';
@@ -9,36 +9,47 @@ const Form = () => {
 
   const [loading, setLoading] = React.useState(false);
   const [formState, setFormState] = React.useState([]);
-  const [formValue, setFormValue] = React.useState([]);
+  const [formData, setformData] = React.useState([]);
+
+
+  const defaultFormData = useCallback(() => {
+    const defaultFormValues = ChargingStationForm.map(item => ({
+      id: item.id,
+      name: item.data.name,
+      value: parseInt(item.data.value)
+    }));
+    
+    setformData(defaultFormValues);
+  }, [])
 
   React.useEffect(() => {
     setFormState(ChargingStationForm);
-    console.log(formValue, 'hform Value');
-  }, [formValue, setFormState]);
+    defaultFormData();
+  }, [setFormState, defaultFormData]);
 
   // Check if form value is already present
   const getFormElById = (id) => {
-    const index = formValue.findIndex((el) => el.id === id);
+    const index = formData.findIndex((el) => el.id === id);
     return index !== -1;
   }
   
   // Update form values
   const handleInputChange = (id, name, value) => {
-    let updateFormValue;
+    let updateformData;
     if (getFormElById(id)) {
-      updateFormValue = formValue.map((formEntry) => {
+      updateformData = formData.map((formEntry) => {
           if (formEntry.id === id) {
             return {
               ...formEntry,
-              value: value
+              value: parseInt(value)
             }
           }
           return formEntry;
       })
     } else {
-      updateFormValue = [...formValue, {['id']: id, ['name']: name, ['value']:value}]
+      updateformData = [...formData, {['id']: id, ['name']: name, ['value']:parseInt(value)}]
     }
-    setFormValue(updateFormValue);
+    setformData(updateformData);
   }
   
   // Render specific form tag
@@ -52,20 +63,23 @@ const Form = () => {
   const handleRunSimulation = async (e) => {
     e.preventDefault();
     try {
-      await runSimulation(formValue);
+      await runSimulation(formData);
     } catch (error) {
       throw new Error(`Failed simulation run ${error}`)
     }
     
   }
-
   return (
-    <>
-      {formState.map((tag) => getFormElement({ ...tag }))}
-      <button onClick={handleRunSimulation} className="btn btn-sm btn-active btn-secondary">
-        Run Simulation
-      </button>
-    </>
+    <div className="card rounded border border-base-200 bg-base-100 p-4">
+        <div className="flex gap-4 lg:gap-4 md:gap-6 flex-col md:flex-row">
+          {formState.map((tag) => getFormElement({ ...tag }))}
+        </div>  
+        <div className="py-4">
+          <button onClick={handleRunSimulation} className="btn btn-sm rounded btn-active btn-secondary">
+            Run Simulation
+          </button>
+        </div>
+    </div>
   );
 };
 

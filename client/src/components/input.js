@@ -25,7 +25,7 @@ const Input = ({
     }
 
     return (
-        <label htmlFor={id} className="form-control w-full max-w-xs">
+        <label htmlFor={id} className="form-control w-full sm:height-10">
             <div className="label">
                 <span className="label-text">{text}</span>
             </div>
@@ -37,7 +37,7 @@ const Input = ({
                 placeholder={placeholder} 
                 ref={inputRef}
                 onChange={handleOnChange}
-                className="input input-bordered input-sm w-full max-w-xs" />
+                className="input input-bordered rounded input-sm w-full" />
         </label>
     )
 }
