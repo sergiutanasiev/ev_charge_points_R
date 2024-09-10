@@ -9,15 +9,14 @@
 5. Client can be accessed at `localhost:3000`
 6. Server can be accessed at `localhost:3001`
 
-7. For separate installation of client and server if concurently fails
-# For the client directory
+For separate installation of client and server if concurently fails
 `cd client`
 `npm install`
 
-# Go back to the root directory
+Go back to the root directory
 `cd ..`
 
-# For the server directory
+For the server directory
 `cd server`
 `npm install`
 
